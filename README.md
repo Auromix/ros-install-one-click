@@ -19,7 +19,7 @@ wget -O $HOME/ros1_noetic_install.sh https://raw.githubusercontent.com/hermanye9
 
 ### Manual Installation
 
-If it is not possible to connect to `raw.githubusercontent.com`, download the `ros1_noetic_install.sh` file manually in the root directory, and execute the following command:
+If it is not possible to connect to `raw.githubusercontent.com`, download the `ros1_noetic_install.sh` file manually in the root directory`/home/<your_username>`, and execute the following command:
 
 ```bash
 sudo bash ros1_noetic_install.sh
