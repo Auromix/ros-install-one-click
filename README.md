@@ -13,5 +13,5 @@ One-click shell script for installing either ROS1 Noetic or ROS2 Humble on Ubunt
 To install with one command, copy and execute the following command in the terminal:
 
 ```bash
-wget -O $HOME/ros1_noetic_install.sh https://raw.githubusercontent.com/hermanye996/ros-install-one-click/main/ros1_noetic_install.sh && sudo chmod +x $HOME/ros1_noetic_install.sh && bash $HOME/ros1_noetic_install.sh && rm $HOME/ros1_noetic_install.sh
+wget -O $HOME/ros1_noetic_install.sh https://raw.githubusercontent.com/hermanye996/ros-install-one-click/main/ros1_noetic_install.sh && sudo chmod +x $HOME/ros1_noetic_install.sh && sudo bash $HOME/ros1_noetic_install.sh && rm $HOME/ros1_noetic_install.sh
 ```
