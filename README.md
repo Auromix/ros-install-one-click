@@ -3,15 +3,16 @@
 [![ROS2 VERSION](https://img.shields.io/badge/ROS2-Humble-brightgreen)](http://docs.ros.org/en/humble/index.html) &nbsp;
 [![Ubuntu_for_ROS2](https://img.shields.io/badge/Ubuntu-22.04-brightgreen)](https://ubuntu.com/) &nbsp;
 [![LICENSE](https://img.shields.io/badge/license-Apache--2.0-informational)](https://github.com/mangdangroboticsclub/gpt4_ros2/blob/main/LICENSE) &nbsp;
+
 # ros-install-one-click
 
-This is a one-click shell script that enables the installation of either ROS1 Noetic or ROS2 Humble on Ubuntu, specifically optimized for users in China.
+This is a one-click shell script that enables the installation of either ROS1 Noetic or ROS2 Humble on Ubuntu, specifically optimized for users in China. It now also includes a one-click installation script for MoveIt under ROS1 Noetic.
 
-## Installation
+## ROS 1 Noetic Installation
 
 ### One-click Installation
 
-To install ROS with a single command, copy and execute the following command in the terminal:
+To install ROS1 Noetic with a single command, copy and execute the following command in the terminal:
 
 ```bash
 wget -O $HOME/ros1_noetic_install.sh https://raw.githubusercontent.com/hermanye996/ros-install-one-click/main/ros1_noetic_install.sh && sudo chmod +x $HOME/ros1_noetic_install.sh && sudo bash $HOME/ros1_noetic_install.sh && rm $HOME/ros1_noetic_install.sh
@@ -24,3 +25,22 @@ If it is not possible to connect to `raw.githubusercontent.com`, download the `r
 ```bash
 sudo bash ros1_noetic_install.sh
 ```
+
+## MoveIt 1 Installation
+
+### One-click MoveIt Installation for ROS1 Noetic
+
+To install MoveIt for ROS1 Noetic with a single command, copy and execute the following command in the terminal:
+
+```bash
+wget -O $HOME/moveit1_install.sh https://raw.githubusercontent.com/hermanye996/ros-install-one-click/main/moveit1_install.sh && sudo chmod +x $HOME/moveit1_install.sh && sudo bash $HOME/moveit1_install.sh && rm $HOME/moveit1_install.sh
+```
+
+### Manual MoveIt Installation for ROS1 Noetic
+
+If it is not possible to connect to `raw.githubusercontent.com`, download the `moveit1_install.sh` file manually in the root directory`/home/<your_username>`, and execute the following command:
+
+```bash
+sudo bash moveit1_install.sh
+```
+ 
