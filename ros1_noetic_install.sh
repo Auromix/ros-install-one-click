@@ -1,5 +1,19 @@
 #!/bin/bash
 #
+# Copyright 2023 Herman Ye @Auromix
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 # Description: 
 # This is a shell script for installing ROS1 Noetic and its dependencies in Ubuntu 20.04 in China.
 # It uses mirrors from Tsinghua University to speed up the download.
@@ -7,10 +21,9 @@
 # It installs ROS1 Noetic and its dependencies, initializes rosdep, and verifies the installation by running roscore.
 # It logs the installation progress and redirects the output to the console and logs files.
 #
-# Version: 1.3
-# Date: 2023-06-12
-# Author: Herman Ye @Realman Robotics
-# License: Apache License 2.0
+# Version: 1.4
+# Date: 2023-06-19
+# Author: Herman Ye @Auromix
 # Warning: This script is ONLY for ROS1 Noetic in ubuntu 20.04
 # set -x
 set -e
