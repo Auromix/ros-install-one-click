@@ -1,15 +1,28 @@
 #!/bin/bash
 #
+# Copyright 2023 Herman Ye @Auromix
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#     http://www.apache.org/licenses/LICENSE-2.0
+
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 # Description: 
 # This is a shell script for setting up a MoveIt workspace and downloading its source code along with the required dependencies on ROS1 Noetic in Ubuntu 20.04.
 # The script installs necessary packages, creates a catkin workspace, and clones the MoveIt source code along with example code from the respective GitHub repositories.
 # It then uses rosdep to install dependencies and builds the workspace using catkin.
 # Finally, it adds the path of the workspace to the .bashrc file for easy access.
 #
-# Version: 1.0
-# Date: 2023-06-13
-# Author: Herman Ye @Realman Robotics
-# License: Apache License 2.0
+# Version: 1.1
+# Date: 2023-06-19
+# Author: Herman Ye @Auromix
 #
 # Warning: This script assumes that the ubuntu20.04 system and ROS1 Noetic have been installed correctly
 # If not, please execute ros1_noetic_install.sh first.
