@@ -91,6 +91,7 @@ sudo apt install python3-wstool -y
 
 # Install moveit
 sudo apt-get install ros-noetic-moveit -y
+sudo apt-get install ros-noetic-moveit-visual-tools -y
 # Warning: Installing all subpackages of moveit may cause dependency conflicts, please do so with caution.
 # sudo apt install ros-noetic-moveit-* -y
 
