@@ -92,8 +92,12 @@ fi
 sudo apt update
 sudo apt upgrade -y
 
+
 # Install pip
+sudo apt install python3-dev -y
 sudo apt install pip -y # If you haven't already installed pip
+
+
 
 # Install gnome-terminal
 sudo apt install gnome-terminal -y # If you haven't already installed gnome-terminal
@@ -101,6 +105,8 @@ sudo apt install gnome-terminal -y # If you haven't already installed gnome-term
 # Set default pip source
 pip config set global.index-url http://pypi.tuna.tsinghua.edu.cn/simple
 pip config set global.trusted-host pypi.tuna.tsinghua.edu.cn
+
+
 
 # ROS1 NOETIC INSTALLATION BEGINS HERE
 
@@ -117,6 +123,13 @@ ros_key="${SCRIPT_DIR}/ros.key"
 rm -f "${ros_key}"
 wget http://packages.ros.org/ros.key
 sudo apt-key add ros.key
+
+
+# Install catkin_tools
+pip install -U catkin_tools
+
+# Install dependencies
+sudo apt install libvtk7-jni libvtk7-java libvtk7-dev libvtk7-qt-dev libpcl-dev -y
 
 # Update the system packages index to the latest version
 sudo apt update
