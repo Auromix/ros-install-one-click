@@ -8,7 +8,7 @@
 
 # ros-install-one-click
 
-This is a one-click shell script that enables the installation of either ROS1 Noetic or ROS2 Humble on Ubuntu, specifically optimized for users in China. It now also includes a one-click installation script for MoveIt under ROS1 Noetic.
+This is a one-click shell script that enables the installation of either ROS1 Noetic or ROS2 Humble on Ubuntu, specifically optimized for users in China. It now also includes a one-click installation script for MoveIt under ROS1 Noetic, realsense camera install with Nvidia Orin nano.
 
 ## ROS 1 Noetic Installation
 
@@ -44,5 +44,22 @@ If it is not possible to connect to `raw.githubusercontent.com`, download the `m
 
 ```bash
 sudo bash moveit1_install.sh
+```
+## Realsense Installation
+
+### One-click Realsense Installation for ROS1 Noetic
+
+To install Realsense for Nvidia Jetson Orin nano with a single command, copy and execute the following command in the terminal:
+
+```bash
+wget -O $HOME/realsense_install_nvidia.sh https://raw.githubusercontent.com/hermanye996/ros-install-one-click/main/realsense_install_nvidia.sh && sudo chmod +x $HOME/realsense_install_nvidia.sh && sudo bash $HOME/realsense_install_nvidia.sh && rm $HOME/realsense_install_nvidia.sh
+```
+
+### Manual MoveIt Installation for ROS1 Noetic
+
+If it is not possible to connect to `raw.githubusercontent.com`, download the `realsense_install_nvidia.sh` file manually in the root directory`/home/<your_username>`, and execute the following command:
+
+```bash
+sudo bash realsense_install_nvidia.sh
 ```
  
