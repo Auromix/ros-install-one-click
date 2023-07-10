@@ -23,9 +23,10 @@
 #
 # Warning: This script assumes that the ubuntu20.04 system and ROS1 Noetic have been installed correctly
 # If not, please execute ros1_noetic_install.sh first.
+# The script is tested with Nvidia Jetson Orin nano
 #
 # set -x
-# set -e
+set -e
 # Get script directory
 SCRIPT_DIR=$(dirname "$0")
 # Check if script is run in Ubuntu 20.04
