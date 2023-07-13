@@ -17,8 +17,8 @@
 # Description:
 # This script is used to install realsense2_camera and realsense2_description
 #
-# Version: 1.0
-# Date: 2023-07-10
+# Version: 1.1
+# Date: 2023-07-13
 # Author: Herman Ye @Auromix
 #
 # Warning: This script assumes that the ubuntu20.04 system and ROS1 Noetic have been installed correctly
@@ -45,8 +45,8 @@ else
     exit 1
 fi
 # Save logs to files
-LOG_FILE="${SCRIPT_DIR}/moveit1_install.log"
-ERR_FILE="${SCRIPT_DIR}/moveit1_install.err"
+LOG_FILE="${SCRIPT_DIR}/realsense_install.log"
+ERR_FILE="${SCRIPT_DIR}/realsense_install.err"
 rm -f "${LOG_FILE}"
 rm -f "${ERR_FILE}"
 # Redirect output to console and log files
