@@ -20,8 +20,8 @@
 # It then uses rosdep to install dependencies and builds the workspace using catkin.
 # Finally, it adds the path of the workspace to the .bashrc file for easy access.
 #
-# Version: 1.2
-# Date: 2023-06-29
+# Version: 1.3
+# Date: 2023-07-19
 # Author: Herman Ye @Auromix
 #
 # Warning: This script assumes that the ubuntu20.04 system and ROS1 Noetic have been installed correctly
@@ -104,53 +104,9 @@ sudo rm -rf /home/$USERNAME/ws_moveit
 mkdir -p /home/$USERNAME/ws_moveit/src
 cd  /home/$USERNAME/ws_moveit/src
 
-# Download Example Code(already in the moveit.rosinstall)
-# cd /home/$USERNAME/ws_moveit/src
-echo ""
-echo "Connecting to GitHub, please wait..."
-echo "If the download stuck here for a long time"
-echo "please check your network connection and rerun this script"
-git clone https://github.com/ros-planning/moveit_tutorials.git -b master
-git clone https://github.com/ros-planning/panda_moveit_config.git -b noetic-devel
-git clone https://github.com/ros-controls/ros_control.git -b noetic-devel
-
-# Clone MoveIt packages from source
-# git clone https://github.com/ros-planning/moveit_msgs.git
-# git clone https://github.com/ros-planning/moveit_resources.git
-# git clone https://github.com/ros-planning/geometric_shapes.git --branch noetic-devel
-# git clone https://github.com/ros-planning/srdfdom.git --branch noetic-devel
-# git clone https://github.com/ros-planning/moveit.git
-# git clone https://github.com/PickNikRobotics/rviz_visual_tools.git
-# git clone https://github.com/ros-planning/moveit_visual_tools.git
-# git clone https://github.com/ros-planning/moveit_tutorials.git
-# git clone https://github.com/ros-planning/panda_moveit_config.git --branch noetic-devel
-
-
-
-# Rosdepc install
-cd /home/$USERNAME/ws_moveit/src
-rosdepc install -y --from-paths . --ignore-src --rosdistro noetic > /dev/null
-echo "Rosdep install finished"
-
-# Build the Workspace
-cd /home/$USERNAME/ws_moveit
-catkin config --extend /opt/ros/noetic --cmake-args -DCMAKE_BUILD_TYPE=Release
-catkin init
-catkin build
-
-# Environment setup
-if ! grep -q "/home/$USERNAME/ws_moveit/devel/setup.bash" /home/$USERNAME/.bashrc; then
-
-    echo "# ws_moveit Environment Setting" | sudo tee -a /home/$USERNAME/.bashrc
-    echo "source /home/$USERNAME/ws_moveit/devel/setup.bash" >> /home/$USERNAME/.bashrc
-    echo "ws_moveit environment setup added to /home/$USERNAME/.bashrc"
-else
-    echo "ws_moveit environment is already set in /home/$USERNAME/.bashrc"
-fi
-source /home/$USERNAME/.bashrc
-
-# Verifying Moveit1 installation
 clear
+sleep 1
+
 # Define the variables to be printed
 TEXT0=""
 TEXT1="Moveit installation completed!"
@@ -173,26 +129,89 @@ TEXT1_PADDING=$((($TERMINAL_WIDTH-${#TEXT1})/2))
 TEXT2_PADDING=$((($TERMINAL_WIDTH-${#TEXT2})/2))
 TEXT3_PADDING=$((($TERMINAL_WIDTH-${#TEXT3})/2))
 
-# Print the text in the center of the screen in the desired colors
+# Finished
 echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT0} ${NC}"
-echo -e "${NC}$(printf '%*s' $TEXT1_PADDING)${TEXT0} ${NC}"
 echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT0} ${NC}"
-echo -e "${NC}$(printf '%*s' $TEXT1_PADDING)${TEXT0} ${NC}"
+echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT0} ${NC}"
+echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT0} ${NC}"
 echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT0} ${NC}"
 echo -e "${GREEN}$(printf '%*s' $TEXT1_PADDING)${TEXT1} ${NC}"
-echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT2} ${NC}"
-echo -e "${NC}$(printf '%*s' $TEXT1_PADDING)${TEXT0} ${NC}"
 echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT0} ${NC}"
-echo -e "${RED}$(printf '%*s' $TEXT3_PADDING)${TEXT3} ${NC}"
-echo -e "${NC}$(printf '%*s' $TEXT1_PADDING)${TEXT0} ${NC}"
 echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT0} ${NC}"
-echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT4} ${NC}"
-echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT5} ${NC}"
-echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT6} ${NC}"
-echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT7} ${NC}"
-echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT8} ${NC}"
-echo -e "${NC}$(printf '%*s' $TEXT1_PADDING)${TEXT0} ${NC}"
 echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT0} ${NC}"
-echo -e "${NC}$(printf '%*s' $TEXT1_PADDING)${TEXT0} ${NC}"
-echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT0} ${NC}"
-echo -e "${NC}$(printf '%*s' $TEXT1_PADDING)${TEXT0} ${NC}"
+read -rp "Do you want to download the tutorial code? (y/n)  " confirm
+  if [[ "$confirm" =~ ^[Yy]$ ]]; then
+    # Download Example Code(already in the moveit.rosinstall)
+    # cd /home/$USERNAME/ws_moveit/src  
+    clear
+    echo "Connecting to GitHub, please wait..."
+    echo "If the download stuck here for a long time"
+    echo "please check your network connection and rerun this script"
+    git clone https://github.com/ros-planning/moveit_tutorials.git -b master
+    git clone https://github.com/ros-planning/panda_moveit_config.git -b noetic-devel
+
+    # git clone https://github.com/ros-controls/ros_control.git -b noetic-devel
+
+    # Clone MoveIt packages from source
+    # git clone https://github.com/ros-planning/moveit_msgs.git
+    # git clone https://github.com/ros-planning/moveit_resources.git
+    # git clone https://github.com/ros-planning/geometric_shapes.git --branch noetic-devel
+    # git clone https://github.com/ros-planning/srdfdom.git --branch noetic-devel
+    # git clone https://github.com/ros-planning/moveit.git
+    # git clone https://github.com/PickNikRobotics/rviz_visual_tools.git
+    # git clone https://github.com/ros-planning/moveit_visual_tools.git
+    # git clone https://github.com/ros-planning/moveit_tutorials.git
+    # git clone https://github.com/ros-planning/panda_moveit_config.git --branch noetic-devel
+        # Rosdepc install
+    cd /home/$USERNAME/ws_moveit/src
+    rosdepc install -y --from-paths . --ignore-src --rosdistro noetic > /dev/null
+    echo "Rosdep install finished"
+
+    # Build the Workspace
+    cd /home/$USERNAME/ws_moveit
+    catkin config --extend /opt/ros/noetic --cmake-args -DCMAKE_BUILD_TYPE=Release
+    catkin init
+    catkin build
+
+    # Environment setup
+    if ! grep -q "/home/$USERNAME/ws_moveit/devel/setup.bash" /home/$USERNAME/.bashrc; then
+
+        echo "# ws_moveit Environment Setting" | sudo tee -a /home/$USERNAME/.bashrc
+        echo "source /home/$USERNAME/ws_moveit/devel/setup.bash" >> /home/$USERNAME/.bashrc
+        echo "ws_moveit environment setup added to /home/$USERNAME/.bashrc"
+    else
+        echo "ws_moveit environment is already set in /home/$USERNAME/.bashrc"
+    fi
+    source /home/$USERNAME/.bashrc
+
+    # Verifying Moveit1 installation
+    clear
+
+
+    # Print the text in the center of the screen in the desired colors
+    echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT0} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT1_PADDING)${TEXT0} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT0} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT1_PADDING)${TEXT0} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT0} ${NC}"
+    echo -e "${GREEN}$(printf '%*s' $TEXT1_PADDING)${TEXT1} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT2} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT1_PADDING)${TEXT0} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT0} ${NC}"
+    echo -e "${RED}$(printf '%*s' $TEXT3_PADDING)${TEXT3} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT1_PADDING)${TEXT0} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT0} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT4} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT5} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT6} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT7} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT8} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT1_PADDING)${TEXT0} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT0} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT1_PADDING)${TEXT0} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT2_PADDING)${TEXT0} ${NC}"
+    echo -e "${NC}$(printf '%*s' $TEXT1_PADDING)${TEXT0} ${NC}"
+  else
+    read -p "Ok. The installation is complete. Press any key to exit..."
+    exit 0
+  fi
