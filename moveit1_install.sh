@@ -147,6 +147,8 @@ read -rp "Do you want to download the tutorial code? (y/n)  " confirm
     echo "Connecting to GitHub, please wait..."
     echo "If the download stuck here for a long time"
     echo "please check your network connection and rerun this script"
+    # install franka robot as demo
+    sudo apt install ros-noetic-franka-* -y
     git clone https://github.com/ros-planning/moveit_tutorials.git -b master
     git clone https://github.com/ros-planning/panda_moveit_config.git -b noetic-devel
 
