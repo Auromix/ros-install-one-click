@@ -111,7 +111,7 @@ sleep 1
 TEXT0=""
 TEXT1="Moveit installation completed!"
 TEXT2="Please open a new terminal and run roslaunch to verify the installation:"
-TEXT3="roslaunch panda_moveit_config demo.launch rviz_tutorial:=true"
+TEXT3="roslaunch panda_moveit_config demo.launch"
 TEXT4="1. Click 'Add' in the left panel, and add the following items:"
 TEXT5="2. Add 'RobotModel', 'MotionPlanning' to the left panel"
 TEXT6="3. Try to drag the end effector to see if the robot arm moves"
