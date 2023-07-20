@@ -17,7 +17,7 @@ This is a one-click shell script that enables the installation of either ROS1 No
 To install ROS1 Noetic with a single command, copy and execute the following command in the terminal:
 
 ```bash
-wget -O $HOME/ros1_noetic_install.sh https://raw.githubusercontent.com/hermanye996/ros-install-one-click/main/ros1_noetic_install.sh && sudo chmod +x $HOME/ros1_noetic_install.sh && sudo bash $HOME/ros1_noetic_install.sh && rm $HOME/ros1_noetic_install.sh
+wget -O $HOME/ros1_noetic_install.sh https://raw.githubusercontent.com/auromix/ros-install-one-click/main/ros1_noetic_install.sh && sudo chmod +x $HOME/ros1_noetic_install.sh && sudo bash $HOME/ros1_noetic_install.sh && rm $HOME/ros1_noetic_install.sh
 ```
 
 ### Manual Installation
@@ -35,7 +35,7 @@ sudo bash ros1_noetic_install.sh
 To install MoveIt for ROS1 Noetic with a single command, copy and execute the following command in the terminal:
 
 ```bash
-wget -O $HOME/moveit1_install.sh https://raw.githubusercontent.com/hermanye996/ros-install-one-click/main/moveit1_install.sh && sudo chmod +x $HOME/moveit1_install.sh && sudo bash $HOME/moveit1_install.sh && rm $HOME/moveit1_install.sh
+wget -O $HOME/moveit1_install.sh https://raw.githubusercontent.com/auromix/ros-install-one-click/main/moveit1_install.sh && sudo chmod +x $HOME/moveit1_install.sh && sudo bash $HOME/moveit1_install.sh && rm $HOME/moveit1_install.sh
 ```
 
 ### Manual MoveIt Installation for ROS1 Noetic
@@ -52,7 +52,7 @@ sudo bash moveit1_install.sh
 To install Realsense for Nvidia Jetson Orin nano with a single command, copy and execute the following command in the terminal:
 
 ```bash
-wget -O $HOME/realsense_install_nvidia.sh https://raw.githubusercontent.com/hermanye996/ros-install-one-click/main/realsense_install_nvidia.sh && sudo chmod +x $HOME/realsense_install_nvidia.sh && sudo bash $HOME/realsense_install_nvidia.sh && rm $HOME/realsense_install_nvidia.sh
+wget -O $HOME/realsense_install_nvidia.sh https://raw.githubusercontent.com/auromix/ros-install-one-click/main/realsense_install_nvidia.sh && sudo chmod +x $HOME/realsense_install_nvidia.sh && sudo bash $HOME/realsense_install_nvidia.sh && rm $HOME/realsense_install_nvidia.sh
 ```
 
 ### Manual Realsense Installation
