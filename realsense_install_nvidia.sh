@@ -61,7 +61,7 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key F6E65AC044F831AC80A
 # Add the server to the list of repositories
 sudo add-apt-repository "deb https://librealsense.intel.com/Debian/apt-repo $(lsb_release -cs) main" -u
 # Install the SDK
-pip3 install pyrealsense2 -y
+pip3 install pyrealsense2
 sudo apt-get install librealsense2-utils -y
 sudo apt-get install librealsense2-dev -y
 # Reconnect the RealSense device
