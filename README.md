@@ -52,7 +52,7 @@ sudo bash moveit1_install.sh
 To install Realsense for Nvidia Jetson Orin nano with a single command, copy and execute the following command in the terminal:
 
 ```bash
-wget -O $HOME/realsense_install_nvidia.sh https://raw.githubusercontent.com/auromix/ros-install-one-click/main/realsense_install_nvidia.sh && sudo chmod +x $HOME/realsense_install_nvidia.sh && ./$HOME/realsense_install_nvidia.sh && rm $HOME/realsense_install_nvidia.sh
+wget -O $HOME/realsense_install_nvidia.sh https://raw.githubusercontent.com/auromix/ros-install-one-click/main/realsense_install_nvidia.sh && sudo chmod +x $HOME/realsense_install_nvidia.sh && .$HOME/realsense_install_nvidia.sh && rm $HOME/realsense_install_nvidia.sh
 ```
 
 ### Manual Realsense Installation
