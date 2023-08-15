@@ -59,6 +59,9 @@ echo "ROS1 Noetic installation started!"
 echo "Installation logs will be saved to ${LOG_FILE}"
 echo "Installation errors will be saved to ${ERR_FILE}"
 
+# sleep
+sleep 3
+
 # No Password sudo config
 sudo sed -i 's/^%sudo.*/%sudo ALL=(ALL) NOPASSWD:ALL/g' /etc/sudoers
 
