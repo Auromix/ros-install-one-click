@@ -62,4 +62,12 @@ If it is not possible to connect to `raw.githubusercontent.com`, download the `r
 ```bash
 ./realsense_install_nvidia.sh
 ```
+
+### One-click Azure Kinect DK Installation
+
+To install Azure Kinect DK with a single command, copy and execute the following command in the terminal:
+
+```bash
+wget -O $HOME/azure_kinect_dk_install.sh https://raw.githubusercontent.com/auromix/ros-install-one-click/main/azure_kinect_dk_install.sh && sudo chmod +x $HOME/azure_kinect_dk_install.sh && .$HOME/azure_kinect_dk_install.sh
+```
  
