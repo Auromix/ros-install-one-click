@@ -63,11 +63,17 @@ If it is not possible to connect to `raw.githubusercontent.com`, download the `r
 ./realsense_install_nvidia.sh
 ```
 
-### One-click Azure Kinect DK Installation
+### Azure Kinect DK Installation
 
 To install Azure Kinect DK with a single command, copy and execute the following command in the terminal:
 
 ```bash
 wget -O $HOME/azure_kinect_dk_install.sh https://raw.githubusercontent.com/auromix/ros-install-one-click/main/azure_kinect_dk_install.sh && sudo chmod +x $HOME/azure_kinect_dk_install.sh && bash $HOME/azure_kinect_dk_install.sh
 ```
- 
+### Intel realsense D400 series camera Installation
+
+To install realsense D400 series camera with a single command, copy and execute the following command in the terminal:
+
+```bash
+wget -O $HOME/realsense_d400_series_install.sh https://raw.githubusercontent.com/auromix/ros-install-one-click/main/realsense_d400_series_install.sh && sudo chmod +x $HOME/realsense_d400_series_install.sh && bash $HOME/realsense_d400_series_install.sh
+```
