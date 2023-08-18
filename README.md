@@ -77,3 +77,8 @@ To install realsense D400 series camera with a single command, copy and execute 
 ```bash
 wget -O $HOME/realsense_d400_series_install.sh https://raw.githubusercontent.com/auromix/ros-install-one-click/main/realsense_d400_series_install.sh && sudo chmod +x $HOME/realsense_d400_series_install.sh && bash $HOME/realsense_d400_series_install.sh
 ```
+### Config Static IP
+This script provides a command-line method to configure a static IP address for an Ethernet interface on a robot. It is particularly useful when a graphical user interface (GUI) is not easily accessible or feasible.
+```bash
+./config_static_ip.sh
+```
