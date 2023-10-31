@@ -174,6 +174,7 @@ else
     sudo pip install rosdep
     sudo pip install rosdepc
     sudo rosdepc init > /dev/null
+    rosdepc update
     rosdep install --from-paths src --ignore-src --rosdistro humble -y
     echo "Building workspace..."
     colcon build
