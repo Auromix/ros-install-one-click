@@ -20,8 +20,8 @@
 # It then uses rosdep to install dependencies and builds the workspace using catkin.
 # Finally, it adds the path of the workspace to the .bashrc file for easy access.
 #
-# Version: 1.3
-# Date: 2023-07-19
+# Version: 1.4
+# Date: 2023-11-11
 # Author: Herman Ye @Auromix
 #
 # Warning: This script assumes that the ubuntu20.04 system and ROS1 Noetic have been installed correctly
@@ -72,16 +72,8 @@ rm -f ${ERR_FILE}
 exec 1> >(tee -a ${LOG_FILE} )
 exec 2> >(tee -a ${ERR_FILE} >&2)
 
-# Add GitHub520 Host to host for GitHub access in China
-# https://github.com/521xueweihan/GitHub520
+# Install curl
 sudo apt install curl -y
-sudo sed -i "/# GitHub520 Host Start/Q" /etc/hosts && curl https://raw.hellogithub.com/hosts >> /etc/hosts
-echo "GitHub520 Host added to host file"
-# sudo sed -i 's/#DNS=/DNS=114.114.114.114/' /etc/systemd/resolved.conf
-# echo "DNS server changed to 114.114.114.114"
-sudo systemctl restart systemd-resolved.service
-echo "Refreshed network settings, sleep 5 seconds"
-sleep 5
 
 # Install catkin the ROS build system
 sudo apt install ros-noetic-catkin python3-catkin-tools python3-osrf-pycommon -y
