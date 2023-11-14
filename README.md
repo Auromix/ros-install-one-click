@@ -50,9 +50,22 @@ To install Azure Kinect DK with a single command, copy and execute the following
 ```bash
 wget -O $HOME/azure_kinect_dk_install.sh https://raw.githubusercontent.com/auromix/ros-install-one-click/main/azure_kinect_dk_install.sh && sudo chmod +x $HOME/azure_kinect_dk_install.sh && bash $HOME/azure_kinect_dk_install.sh
 ```
-
-
-
+### Isaac Sim python assistant
+The Isaac Sim python assistant script facilitates the execution of an Isaac Sim standalone Python script provided by the user.
+```bash
+# Go to your isaac sim standalone python directory
+cd <your_python_directory>
+# Download the script
+wget https://raw.githubusercontent.com/auromix/ros-install-one-click/main/isaacsim_python_assistant.sh
+# Grant execute permission
+chmod +x isaacsim_python_assistant.sh
+```
+```bash
+# Go to your isaac sim standalone python directory
+cd <your_python_directory>
+# Run the script to launch your isaac sim standalone python file
+./isaacsim_python_assistant.sh
+```
 ### Config Static IP
 This script provides a command-line method to configure a static IP address for an Ethernet interface on a robot. It is particularly useful when a graphical user interface (GUI) is not easily accessible or feasible.
 ```bash
