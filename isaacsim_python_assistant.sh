@@ -114,7 +114,7 @@ cd "$isaac_sim_dir"
 
 # Start the Python script
 echo -e "${green}Starting $filename...${reset}"
-sleep 2
+sleep 1
 bash python.sh "$python_path"
 exit 0
 
