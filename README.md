@@ -71,3 +71,8 @@ This script provides a command-line method to configure a static IP address for 
 ```bash
 ./config_static_ip.sh
 ```
+### Test CUDA
+This script test your CUDA and Pytorch environment.
+```bash
+wget https://raw.githubusercontent.com/auromix/ros-install-one-click/main/test_cuda.py && python3 test_cuda.py
+```
