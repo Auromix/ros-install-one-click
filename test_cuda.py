@@ -37,7 +37,7 @@ def main():
 
     # Check CUDA version
     cuda_version = torch.version.cuda if cuda_available else "N/A (CUDA not available)"
-    print(f"CUDA version: {cuda_version}")
+    print(f"CUDA Version: {cuda_version}")
 
     # Check cuDNN version
     print(f"cuDNN Version: {str(torch.backends.cudnn.version())}")
@@ -79,6 +79,70 @@ def main():
         print('Tensor b = ' + str(b))
         print('Tensor c = ' + str(c))
 
+# Add this function to your code if you want to check the environment before running your code
+# cuda_pytorch_environment_check()
+def cuda_pytorch_environment_check(print_info=True, print_test=False):
+    try:
+        # Check PyTorch version
+        torch_version = torch.__version__
+
+        # Check torchvision version
+        torchvision_version = torchvision.__version__
+
+        # Check if CUDA is available
+        cuda_available = torch.cuda.is_available()
+
+        # Check CUDA version
+        cuda_version = torch.version.cuda if cuda_available else "N/A (CUDA not available)"
+
+        # Check cuDNN version
+        cudnn_version = str(torch.backends.cudnn.version())
+
+        # Get the current CUDA device
+        current_device = torch.cuda.current_device()
+
+        # Get the number of CUDA devices
+        num_devices = torch.cuda.device_count()
+
+        # Get the name of the current CUDA device
+        device_name = torch.cuda.get_device_name(current_device)
+
+        # Print info
+        if print_info:
+            print("CUDA PYTORCH ENVIRONMENT CHECK")
+            print("##############################")
+            print(f"Torch Version: {torch_version}")
+            print(f"Torchvision Version: {torchvision_version}")
+            print(f"CUDA with torch available: {cuda_available}")
+            print(f"CUDA Version: {cuda_version}")
+            print(f"cuDNN Version: {cudnn_version}")
+            print(f"Current CUDA device: {current_device}")
+            print(f"Number of CUDA devices: {num_devices}")
+            print(f"Name of current CUDA device: {device_name}")
+            print("##############################")
+
+        # Test CUDA tensors
+        test_cuda_a = torch.cuda.FloatTensor(2).zero_()
+        test_cuda_b = torch.randn(2).cuda()
+        test_cuda_c = test_cuda_a + test_cuda_b
+        test_cuda_d = torch.zeros(4, device="cuda:0")
+
+        # Print test results
+        if print_test:
+            print("\nCUDA TENSOR TEST")
+            print("##############################")
+            print("Tensor operations:")
+            print("Tensor a (float 2) = " + str(test_cuda_a))
+            print("Tensor b (randn 2) = " + str(test_cuda_b))
+            print("Tensor c ( a + b ) = " + str(test_cuda_c))
+            print("Tensor d (zeros 4) = " + str(test_cuda_d))
+            print("##############################")
+
+    except Exception as e:
+        print("CUDA PYTORCH CHECK FAILED")
+        print(f"Error: {e}")
+    else:
+        print("\nCUDA PYTORCH CHECK DONE\n")
 
 if __name__ == "__main__":
     main()
