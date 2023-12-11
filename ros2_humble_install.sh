@@ -21,8 +21,8 @@
 # It installs ROS2 Humble and its dependencies, initializes rosdep.
 # It logs the installation progress and redirects the output to the console and logs files.
 #
-# Version: 1.0
-# Date: 2023-10-31
+# Version: 1.1
+# Date: 2023-12-11
 # Author: Herman Ye @Auromix
 #
 # Warning: This script is ONLY for ROS2 Humble in ubuntu 22.04
