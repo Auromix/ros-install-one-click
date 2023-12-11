@@ -21,8 +21,8 @@
 # It installs ROS1 Noetic and its dependencies, initializes rosdep, and verifies the installation by running roscore.
 # It logs the installation progress and redirects the output to the console and logs files.
 #
-# Version: 1.4
-# Date: 2023-06-19
+# Version: 1.5
+# Date: 2023-12-11
 # Author: Herman Ye @Auromix
 #
 # Warning: This script is ONLY for ROS1 Noetic in ubuntu 20.04
@@ -119,7 +119,7 @@ sudo add-apt-repository universe
 sudo add-apt-repository multiverse
 
 # Setup your sources.list
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo sh -c 'echo "deb http://mirrors.ustc.edu.cn/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 
 # Add the ROS key
 ros_key="${SCRIPT_DIR}/ros.key"
