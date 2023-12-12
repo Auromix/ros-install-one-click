@@ -106,7 +106,7 @@ NC='\033[0m'
 # Define the variables to be printed
 TEXT1="Orbbec Femto Bolt ROS2 installation completed!"
 TEXT2="Please open new terminals and run commands to verify the installation:"
-TEXT3="ros2 launch femto_bolt.launch.py"
+TEXT3="ros2 launch orbbec_camera femto_bolt.launch.py"
 TEXT4="ros2 run rqt_image_view rqt_image_view /camera/color/image_raw"
 
 # Calculate the center of the terminal window
