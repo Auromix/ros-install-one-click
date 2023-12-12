@@ -42,7 +42,12 @@ To install Realsense for Nvidia Jetson Orin nano with a single command, copy and
 ```bash
 wget -O $HOME/realsense_install_nvidia.sh https://raw.githubusercontent.com/auromix/ros-install-one-click/main/realsense_install_nvidia.sh && sudo chmod +x $HOME/realsense_install_nvidia.sh && bash $HOME/realsense_install_nvidia.sh && rm $HOME/realsense_install_nvidia.sh
 ```
+## Orbbec Femto Bolt Installation
+To install Orbbec Femto Bolt Camera ROS1 version with a single command, copy and execute the following command in the terminal:
 
+```bash
+wget -O $HOME/orbbec_femto_bolt_ros1_install.sh https://raw.githubusercontent.com/auromix/ros-install-one-click/main/orbbec_femto_bolt_ros1_install.sh && sudo chmod +x $HOME/orbbec_femto_bolt_ros1_install.sh && bash $HOME/orbbec_femto_bolt_ros1_install.sh && rm $HOME/orbbec_femto_bolt_ros1_install.sh
+```
 ### Microsoft Azure Kinect DK Installation
 
 To install Azure Kinect DK with a single command, copy and execute the following command in the terminal:
