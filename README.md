@@ -86,6 +86,12 @@ This script provides a command-line method to configure a static IP address for 
 ```bash
 ./config_static_ip.sh
 ```
+### Improve Jetson performance
+To install the best performance setup and basic development environment for NVIDIA Jetson AGX Orin with a single command, copy and execute the following command in the terminal:
+```bash
+wget -O $HOME/jetson_best_performance_install_v512.sh https://raw.githubusercontent.com/auromix/ros-install-one-click/main/jetson_best_performance_install_v512.sh && sudo chmod +x $HOME/jetson_best_performance_install_v512.sh && bash $HOME/jetson_best_performance_install_v512.sh
+```
+
 ### Test CUDA
 This script test your CUDA and Pytorch environment.
 
