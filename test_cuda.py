@@ -19,7 +19,7 @@
 # Description: Test CUDA and Pytorch environment
 
 import torch
-import torchvision
+# import torchvision
 
 
 def main():
@@ -28,8 +28,8 @@ def main():
     print(f"Torch Version: {torch_version}")
 
     # Check torchvision version
-    torchvision_version = torchvision.__version__
-    print(f"Torchvision Version: {torchvision_version}")
+    # torchvision_version = torchvision.__version__
+    # print(f"Torchvision Version: {torchvision_version}")
 
     # Check if CUDA is available
     cuda_available = torch.cuda.is_available()
@@ -86,8 +86,8 @@ def cuda_pytorch_environment_check(print_info=True, print_test=False):
         # Check PyTorch version
         torch_version = torch.__version__
 
-        # Check torchvision version
-        torchvision_version = torchvision.__version__
+        # # Check torchvision version
+        # torchvision_version = torchvision.__version__
 
         # Check if CUDA is available
         cuda_available = torch.cuda.is_available()
@@ -112,7 +112,7 @@ def cuda_pytorch_environment_check(print_info=True, print_test=False):
             print("CUDA PYTORCH ENVIRONMENT CHECK")
             print("##############################")
             print(f"Torch Version: {torch_version}")
-            print(f"Torchvision Version: {torchvision_version}")
+            # print(f"Torchvision Version: {torchvision_version}")
             print(f"CUDA with torch available: {cuda_available}")
             print(f"CUDA Version: {cuda_version}")
             print(f"cuDNN Version: {cudnn_version}")
