@@ -121,11 +121,14 @@ sudo apt update
 echo "Upgrading software..."
 sudo apt upgrade -y
 
+# Set fan and clock to max
+sudo /usr/bin/jetson_clocks --show
+sudo /usr/bin/jetson_clocks --fan
+# sudo /usr/bin/jetson_clocks --store
+
 # Set power perfomance
 echo "Rebooting to reset the power mode..."
 sleep 3
 sudo nvpmodel -m 0 --force
-sudo /usr/bin/jetson_clocks --show
-sudo /usr/bin/jetson_clocks --fan
-# sudo /usr/bin/jetson_clocks --store
+
 echo "Basic env install done."
