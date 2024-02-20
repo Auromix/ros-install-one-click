@@ -16,8 +16,8 @@
 #
 # Description:
 # This is a shell script for installing basic development environment and setting best performance for NVIDIA Jetson AGX Orin.
-# Version: 1.0
-# Date: 2023-01-18
+# Version: 1.1
+# Date: 2023-02-20
 # Author: Herman Ye @Auromix
 #
 # Warning: Only for NVIDIA Jetson AGX Orin with JetPack 5.1.2, ubuntu 20.04
@@ -31,7 +31,7 @@ set -e
 SCRIPT_DIR=$(dirname "$0")
 
 # Get the username of the non-root user
-USERNAME=$USERNAME
+USERNAME=$USER
 echo "Current user is: $USERNAME"
 echo "Script directory is: $SCRIPT_DIR"
 
@@ -39,6 +39,18 @@ echo "Script directory is: $SCRIPT_DIR"
 # No Password sudo config
 echo "Setting no-passwd sudo"
 sudo sed -i 's/^%sudo.*/%sudo ALL=(ALL) NOPASSWD:ALL/g' /etc/sudoers
+
+# No password auto login
+echo "Setting no-passwd auto login"
+echo "[Seat:*]" | sudo tee /etc/lightdm/lightdm.conf.d/50-nvidia.conf
+echo "autologin-user=$USERNAME" | sudo tee -a /etc/lightdm/lightdm.conf.d/50-nvidia.conf
+echo "autologin-user-timeout=0" | sudo tee -a /etc/lightdm/lightdm.conf.d/50-nvidia.conf
+
+# Set auto login for gdm3
+echo "Setting auto login for gdm3"
+echo "Backing up /etc/gdm3/custom.conf to /etc/gdm3/custom.conf.backup ..."
+sudo cp /etc/gdm3/custom.conf /etc/gdm3/custom.conf.backup
+echo -e "[daemon]\nWaylandEnable=false\nAutomaticLoginEnable=true\nAutomaticLogin=$USERNAME\n\n[security]\n\n[xdmcp]" | sudo tee /etc/gdm3/custom.conf
 
 # Get architecture of the system
 if [ $(uname -m) = "x86_64" ]; then
