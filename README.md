@@ -106,6 +106,14 @@ This script provides a command-line method to configure SSH for github.
 script_name="config_ssh.sh" && directory_name="/tmp" && full_script_path="${directory_name}/${script_name}" && wget -O $full_script_path https://raw.githubusercontent.com/auromix/ros-install-one-click/main/$script_name && sudo chmod +x $full_script_path && bash $full_script_path && rm -rf $full_script_path
 ```
 
+### Config VPN SSH Port
+
+If you are using a VPN on router and need to access GitHub via SSH, you will likely need to reconfigure the SSH port.
+
+```bash
+./ config_vpn_ssh_port.sh
+```
+
 ### Improve Jetson performance
 
 To install the best performance setup and basic development environment for NVIDIA Jetson AGX Orin with a single command, copy and execute the following command in the terminal:
