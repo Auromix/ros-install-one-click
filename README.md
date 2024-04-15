@@ -103,7 +103,7 @@ This script provides a command-line method to configure a static IP address for 
 This script provides a command-line method to configure SSH for github.
 
 ```bash
-script_name="config_ssh.sh" && directory_name="/tmp" && full_script_path="${directory_name}/${script_name} && wget -O $full_script_path https://raw.githubusercontent.com/auromix/ros-install-one-click/main/$script_name && sudo chmod +x $full_script_path && bash $full_script_path && rm -rf $full_script_path
+script_name="config_ssh.sh" && directory_name="/tmp" && full_script_path="${directory_name}/${script_name}" && wget -O $full_script_path https://raw.githubusercontent.com/auromix/ros-install-one-click/main/$script_name && sudo chmod +x $full_script_path && bash $full_script_path && rm -rf $full_script_path
 ```
 
 ### Improve Jetson performance
