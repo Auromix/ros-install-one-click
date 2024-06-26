@@ -130,7 +130,7 @@ This script test your CUDA and Pytorch environment.
 wget https://raw.githubusercontent.com/auromix/ros-install-one-click/main/test_cuda.py && python3 test_cuda.py
 ```
 
-### Config Isaac Sim
+### Config Vs Code for Isaac Sim dev
 
 Run the script in the top-level directory of your workspace to set up the Isaac Sim environment for VS Code, enabling the IDE to recognize the Isaac Sim package.
 ```bash
