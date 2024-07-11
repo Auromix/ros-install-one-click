@@ -122,7 +122,13 @@ To install the best performance setup and basic development environment for NVID
 wget -O $HOME/jetson_best_performance_install_v512.sh https://raw.githubusercontent.com/auromix/ros-install-one-click/main/jetson_best_performance_install_v512.sh && sudo chmod +x $HOME/jetson_best_performance_install_v512.sh && bash $HOME/jetson_best_performance_install_v512.sh
 ```
 
-### Test CUDA
+### Config CUDA
+
+Run the script to configure your CUDA after CUDA installation.
+```bash
+script_name="config_cuda.sh" && directory_name="/tmp" && download_url="https://raw.githubusercontent.com/auromix/ros-install-one-click/main" && full_script_path="${directory_name}/${script_name}" && wget -O $full_script_path $download_url/$script_name && sudo chmod +x $full_script_path && bash $full_script_path && rm -rf $full_script_path
+```
+### Test CUDA and Torch
 
 This script test your CUDA and Pytorch environment.
 
@@ -136,3 +142,4 @@ Run the script in the top-level directory of your workspace to set up the Isaac 
 ```bash
 script_name="setup_isaac_sim_ide_environment.sh" && directory_name="/tmp" && download_url="https://raw.githubusercontent.com/Auromix/auro_sim/main/scripts" && full_script_path="${directory_name}/${script_name}" && wget -O $full_script_path $download_url/$script_name && sudo chmod +x $full_script_path && bash $full_script_path && rm -rf $full_script_path
 ```
+
