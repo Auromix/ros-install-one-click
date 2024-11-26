@@ -117,7 +117,7 @@ if [ "$create_rule" == "y" ]; then
     fi
 
     # Generate the udev rule
-    udev_rule="SUBSYSTEM==\"tty\", ATTRS{idVendor}==\"$id_vendor_id\", ATTRS{idProduct}==\"$id_model_id\", SYMLINK+=\"$user_symlink\""
+    udev_rule="SUBSYSTEM==\"tty\", ATTRS{idVendor}==\"$id_vendor_id\", ATTRS{idProduct}==\"$id_model_id\", SYMLINK+=\"$user_symlink\", MODE=\"0777\""
 
     # Save the rule to the file
     echo "$udev_rule" >"$udev_rule_file"
