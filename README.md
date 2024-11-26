@@ -122,6 +122,12 @@ To install the best performance setup and basic development environment for NVID
 wget -O $HOME/jetson_best_performance_install_v512.sh https://raw.githubusercontent.com/auromix/ros-install-one-click/main/jetson_best_performance_install_v512.sh && sudo chmod +x $HOME/jetson_best_performance_install_v512.sh && bash $HOME/jetson_best_performance_install_v512.sh
 ```
 
+### Config UDev Rules
+The config_udev_rules.sh script simplifies the creation of udev rules to assign persistent, user-friendly names (symlinks) to devices connected to your system. It guides you through identifying new devices, extracting udev information, and generating a custom rule to ensure consistent device naming.
+```bash
+script_name="config_udev_rules.sh" && directory_name="/tmp" && full_script_path="${directory_name}/${script_name}" && wget -O $full_script_path https://raw.githubusercontent.com/auromix/ros-install-one-click/main/$script_name && sudo chmod +x $full_script_path && sudo bash $full_script_path && rm -rf $full_script_path
+```
+
 ### Config CUDA
 
 Run the script to configure your CUDA after CUDA installation.
