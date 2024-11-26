@@ -76,7 +76,7 @@ read -r create_rule
 
 if [ "$create_rule" == "y" ]; then
     # Ask the user to provide a name for the rule file
-    default_rule_name="99-my-auromix-device.rules"
+    default_rule_name="99-my-device.rules"
     echo "Please specify a name for the udev rule file (default: $default_rule_name):"
     read -r udev_rule_name
 
